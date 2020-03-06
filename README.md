@@ -10,7 +10,7 @@ Make a shared state AJAX drawing program
 Contributors / Licensing
 ========================
 
-Generally everything is LICENSE'D under the Apache 2 license by Abram Hindle.
+Generally everything is LICENSE'D under the Apache 2 license by Abram Hindle and Ken Li.
 
 ## Note:
 I found that the webstie runs better on Firefox (vs Chrome). According to the Chrome's console, Chrome would run out of resources.

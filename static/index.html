@@ -55,14 +55,15 @@
 			//XXX: TODO Make this prettier!
 			function drawCircle(context, entity) {
 				with (context) {
-					beginPath();
-					lineWidth = 3;
 					var x = entity["x"];
 					var y = entity["y"];
+					beginPath();
+					arc(x, y, entity["radius"] ? entity["radius"] : 50, 0, 2.0 * Math.PI, false);
 					//moveTo(x,y);
 					fillStyle = entity["colour"];
+					fill();
+					lineWidth = 3;
 					strokeStyle = fillStyle;
-					arc(x, y, entity["radius"] ? entity["radius"] : 50, 0, 2.0 * Math.PI, false);
 					stroke();
 				}
 			}
@@ -241,15 +242,15 @@
 			// Add the application specific mouse listeners!
 			//XXX: TODO Make these prettier!
 			mouse.mousedowners.push(function(x, y, clicked, e) {
-				addEntityWithoutName({ x: x, y: y, colour: "blue" });
+				addEntityWithoutName({ x: x, y: y, colour: "green", radius: 6 });
 			});
 
 			mouse.mouseuppers.push(function(x, y, clicked, e) {
-				addEntityWithoutName({ x: x, y: y, colour: "red" });
+				addEntityWithoutName({ x: x, y: y, colour: "red", radius: 6 });
 			});
 
 			mouse.mousedraggers.push(function(x, y, clicked, e) {
-				addEntityWithoutName({ x: x, y: y, colour: "green", radius: 10 });
+				addEntityWithoutName({ x: x, y: y, colour: "white", radius: 5 });
 			});
 
 			function update() {
